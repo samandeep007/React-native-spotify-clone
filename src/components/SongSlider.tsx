@@ -6,11 +6,26 @@ import {useProgress} from 'react-native-track-player';
 export default function SongSlider() {
 
     const {position, duration} = useProgress();
-    
+
 
     return (
     <View>
-      <Text>SongSlider</Text>
+      <Slider
+      value={position}
+      minimumValue={0}
+      maximumValue={duration}
+      thumbTintColor='#FFF'
+      maximumTrackTintColor='#FFF'
+      style={styles.sliderContainer}
+      />
+      <View style={styles.timeContainer}>
+        <Text style={styles.time}>
+            {new Date(position*1000).toISOString().substring(15,19)}
+        </Text>
+        <Text style={styles.time}>
+            {new Date((duration-position)*1000).toISOString().substring(15,19)}
+        </Text>
+      </View>
     </View>
   )
 }
