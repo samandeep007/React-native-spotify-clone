@@ -3,11 +3,11 @@ import React from 'react'
 
 export default function App() {
   return (
-   <SafeAreaView>
-    <StatusBar backgroundColor={"purple"}/>
+    <SafeAreaView>
+      <StatusBar backgroundColor={"purple"} />
+      <Text>Samandeep Singh</Text>
 
-
-   </SafeAreaView>
+    </SafeAreaView>
   )
 }
 
