@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import TrackPlayer, { State, usePlaybackState } from 'react-native-track-player';
+import TrackPlayer, { State, usePlaybackState} from 'react-native-track-player';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import service from '../../service';
 export default function ControlCenter(): JSX.Element{
@@ -26,6 +26,12 @@ export default function ControlCenter(): JSX.Element{
     <View style={styles.container}>
         <Pressable onPress={skipToPrevious}>
             <Icon style={styles.icon} name="skip-previous" size={40}/>
+        </Pressable>
+        <Pressable onPress={() => togglePlayback(playbackState)}>
+            <Icon style={styles.icon} name={playbackState === State.Playing ? "pause" : "play-arrow"} size={75}/>
+        </Pressable>
+        <Pressable onPress={skipToNext}>
+            <Icon style={styles.icon} name="skip-next" size={40}/>
         </Pressable>
              
     </View>
