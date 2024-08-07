@@ -1,4 +1,4 @@
-import { Dimensions, Image, StyleSheet, Text, View } from 'react-native'
+import { Dimensions, FlatList, Image, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import TrackPlayer, {Event, Track, useTrackPlayerEvents} from 'react-native-track-player';
 
@@ -36,8 +36,17 @@ export default function MusicPlayer() {
     }
 
     return (
-    <View>
-      <Text>MusicPlayer</Text>
+    <View style={styles.container}>
+        <FlatList
+        horizontal
+        data={playListData}
+        renderItem={renderArtWork}
+        keyExtractor={song => song.id.toString()}
+        />  
+
+        <SongInfo track={track}/>
+        <SongSlider/>
+        <ControlCenter/>
     </View>
   )
 }
