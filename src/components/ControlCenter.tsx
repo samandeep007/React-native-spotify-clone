@@ -24,9 +24,23 @@ export default function ControlCenter(): JSX.Element{
   
     return (
     <View>
-     
+             
     </View>
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    container: {
+      marginBottom: 56,
+  
+      flex: 1,
+      flexDirection: 'row',
+      alignItems: 'center',
+    },
+    icon: {
+      color: '#FFFFFF',
+    },
+    playButton: {
+      marginHorizontal: 24,
+    },
+  });
