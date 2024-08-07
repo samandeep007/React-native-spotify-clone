@@ -4,8 +4,8 @@ import React from 'react'
 export default function App() {
   return (
    <SafeAreaView>
-    <StatusBar backgroundColor={"purple"} />
-    
+    <StatusBar backgroundColor={"purple"}/>
+
 
    </SafeAreaView>
   )
