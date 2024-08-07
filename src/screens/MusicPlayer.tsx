@@ -1,4 +1,4 @@
-import { Dimensions, StyleSheet, Text, View } from 'react-native'
+import { Dimensions, Image, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import TrackPlayer, {Event, Track, useTrackPlayerEvents} from 'react-native-track-player';
 
@@ -18,7 +18,11 @@ export default function MusicPlayer() {
     const renderArtWork = () => {
         return(
             <View style={styles.listArtWrapper}>
-                
+              <View style={styles.albumContainer}>
+                {track?.artwork && (
+                    <Image style={styles.albumArtImg} source={{uri: track?.artwork?.toString()}}/>
+                )}
+                </View>  
             </View>
         )
     }
