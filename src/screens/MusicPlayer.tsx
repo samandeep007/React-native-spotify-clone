@@ -14,6 +14,14 @@ const {width} = Dimensions.get('window');
 export default function MusicPlayer() {
 
     const[track, setTrack] = useState<Track | null>();
+    useTrackPlayerEvents([Event.PlaybackActiveTrackChanged], async(event) => {
+        switch(event.type){
+            case Event.PlaybackActiveTrackChanged:
+                const playingTrack = await TrackPlayer.getTrack(event.nextTrack);
+                setTrack(playingTrack)
+                break;
+        }
+    })
 
     const renderArtWork = () => {
         return(
