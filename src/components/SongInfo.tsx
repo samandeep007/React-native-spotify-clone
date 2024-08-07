@@ -1,6 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
+import { Track } from 'react-native-track-player'
 
+type songInfoProps = PropsWithChildren<{
+    track: Track | null | undefined
+}>
 export default function SongInfo(): JSX.Element {
   return (
     <View>d
