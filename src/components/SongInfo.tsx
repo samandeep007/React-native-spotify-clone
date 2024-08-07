@@ -13,7 +13,7 @@ export default function SongInfo({ track }: songInfoProps): JSX.Element {
                     {track?.title}
                 </Text>
                 <Text style={styles.artist}>
-                    {track?.artist}
+                    {track?.artist}  .  {track?.album}
                 </Text>
             </View>
         </View>
